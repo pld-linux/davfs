@@ -18,7 +18,7 @@ URL:		http://dav.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	autoconf
 BuildRequires:	%{kgcc_package}
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
