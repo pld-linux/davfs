@@ -122,13 +122,13 @@ ln -sf %{_sbindir}/mount.davfs $RPM_BUILD_ROOT/sbin/mount.davfs
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -n kernel-fs-davfs
+%post -n kernel-fs-davfs
 %depmod %{_kernel_ver}
 
 %postun -n kernel-fs-davfs
 %depmod %{_kernel_ver}
 
-%post   -n kernel-smp-fs-davfs
+%post -n kernel-smp-fs-davfs
 %depmod %{_kernel_ver}smp
 
 %postun -n kernel-smp-fs-davfs
