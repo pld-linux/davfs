@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_dist_kernel          without kernel from distribution
+%bcond_without	dist_kernel	# without kernel from distribution
 #
 %define		_rel	1
 
@@ -16,7 +16,7 @@ Source0:	http://dl.sourceforge.net/dav/%{name}-%{version}.tar.gz
 Patch0:		%{name}-path.patch
 Patch1:		%{name}-is_socket_ready.patch
 URL:		http://dav.sourceforge.net/
-%{!?_without_dist_kernel:BuildRequires:	kernel-headers}
+%{?with_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	autoconf
 BuildRequires:	%{kgcc_package}
 BuildRequires:	openssl-devel >= 0.9.7c
@@ -42,7 +42,7 @@ Summary:	DAVfs - Drivers
 Summary(pl):	DAVfs - Sterowniki
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-%{!?_without_dist_kernel:%requires_releq_kernel_up}
+%{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-fs-davfs
@@ -64,7 +64,7 @@ Summary:	DAVfs - SMP Drivers
 Summary(pl):	DAVfs - Sterowniki SMP
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-%{!?_without_dist_kernel:%requires_releq_kernel_smp}
+%{?with_dist_kernel:%requires_releq_kernel_smp}
 Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-fs-davfs
