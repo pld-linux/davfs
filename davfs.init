@@ -63,10 +63,8 @@ case "$1" in
 	;;
   reload)
 	msg_reloading davfsd
-	busy
 	killproc davfsd -HUP
 	RETVAL=$?
-	[ $RETVAL -eq 0 ] && ok || died
 	;;
   *)
 	msg_usage "$0 {start|stop|init|restart|reload|status}"
