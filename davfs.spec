@@ -119,8 +119,6 @@ install davfs/davfs.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/misc/davfs.o
 install davfs-smp.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/davfs.o
 ln -sf %{_sbindir}/mount.davfs $RPM_BUILD_ROOT/sbin/mount.davfs
 
-gzip -9nf ChangeLog
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -138,7 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/*.html
+%doc ChangeLog doc/*.html
 %attr(755,root,root) /sbin/*
 %attr(755,root,root) %{_sbindir}/*
 
