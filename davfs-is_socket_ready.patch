@@ -1,0 +1,13 @@
+diff -urN davfs-0.2.4.org/lib/libdav.c davfs-0.2.4/lib/libdav.c
+--- davfs-0.2.4.org/lib/libdav.c	Sun Mar 24 14:20:41 2002
++++ davfs-0.2.4/lib/libdav.c	Sun Mar 24 14:45:12 2002
+@@ -508,6 +508,9 @@
+ 	    ssl_mode = 1;
+     }
+ 
++    if(!dc->ns)
++	return NULL;
++    
+     if(ssl_mode) {
+ #ifdef ENABLE_SSL    
+         sock_make_secure(dc->ns, NULL);
