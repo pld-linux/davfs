@@ -19,7 +19,7 @@ URL:		http://dav.sourceforge.net/
 %{?with_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	autoconf
 BuildRequires:	%{kgcc_package}
-BuildRequires:	openssl-devel >= 0.9.7c
+BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	rpmbuild(macros) >= 1.118
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
