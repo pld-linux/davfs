@@ -19,9 +19,13 @@
 [ -f /etc/sysconfig/davfsd ] && . /etc/sysconfig/davfsd
 
 # Check that networking is up.
-if is_no "${NETWORKING}"; then
-	msg_network_down davfsd
-	exit 1
+if is_yes "${NETWORKING}"; then
+	if [ ! -f /var/lock/subsys/network ]; then
+		msg_network_down davfsd
+		exit 1
+	fi
+else
+	exit 0
 fi
 
 
@@ -49,7 +53,7 @@ case "$1" in
 		exit 1
 	fi
 	;;
-  restart|reload)
+  restart)
 	$0 stop
 	$0 start
 	;;
@@ -59,7 +63,10 @@ case "$1" in
 	;;
   reload)
 	msg_reloading davfsd
+	busy
 	killproc davfsd -HUP
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && ok || died
 	;;
   *)
 	msg_usage "$0 {start|stop|init|restart|reload|status}"
