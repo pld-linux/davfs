@@ -34,7 +34,7 @@ normal disk.
 WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
 Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
-u¿ywasz DAVfs to mo¿esz montowaæ swój serwer www jako system plików i
+u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
 u¿ywaæ tak jak normalnego dysku.
 
 %package -n kernel-fs-davfs
@@ -56,7 +56,7 @@ normal disk.
 WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
 Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
-u¿ywasz DAVfs to mo¿esz montowaæ swój serwer www jako system plików i
+u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
 u¿ywaæ tak jak normalnego dysku.
 
 %package -n kernel-smp-fs-davfs
@@ -78,7 +78,7 @@ normal disk.
 WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
 Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
-u¿ywasz DAVfs to mo¿esz montowaæ swój serwer www jako system plików i
+u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
 u¿ywaæ tak jak normalnego dysku.
 
 %prep
