@@ -1,0 +1,24 @@
+diff -urN davfs-0.2.4.org/davfsd/davfsd.c davfs-0.2.4/davfsd/davfsd.c
+--- davfs-0.2.4.org/davfsd/davfsd.c	Sun Mar 24 14:20:41 2002
++++ davfs-0.2.4/davfsd/davfsd.c	Sun Mar 24 14:23:09 2002
+@@ -637,7 +637,7 @@
+     sock_init();
+ 
+     /* get option */
+-    while((o=getopt(argc, argv, "d:h:k"))!=-1) {
++    while((o=getopt(argc, argv, "d:k:h"))!=-1) {
+    	switch(o) {
+ 	case 0 :
+ 	case 'h' :
+diff -urN davfs-0.2.4.org/davfsd/davfsd.h davfs-0.2.4/davfsd/davfsd.h
+--- davfs-0.2.4.org/davfsd/davfsd.h	Sun Mar 24 14:20:41 2002
++++ davfs-0.2.4/davfsd/davfsd.h	Sun Mar 24 14:21:14 2002
+@@ -34,7 +34,7 @@
+ #define MTAB "/etc/mtab"
+ #define TMP_MTAB "/etc/mtab.davfs"
+ 
+-#define PID_FILE "/tmp/davfsd.pid"
++#define PID_FILE "/var/run/davfsd.pid"
+ 
+ #ifndef INVALID_SOCKET
+ #define INVALID_SOCKET -1
