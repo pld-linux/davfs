@@ -11,7 +11,7 @@ Version:	0.2.4
 Release:	%{_rel}
 License:	GPL
 Group:		Base/Kernel
-Source0:	http://prdownloads.sourceforge.net/dav/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/dav/%{name}-%{version}.tar.gz
 Patch0:		%{name}-path.patch
 Patch1:		%{name}-is_socket_ready.patch
 URL:		http://dav.sourceforge.net/
@@ -42,8 +42,8 @@ Summary:	DAVfs - Drivers
 Summary(pl):	DAVfs - Sterowniki
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-fs-davfs
 WebDAV is an acronym for Web-based Distributed Authoring and Version-
@@ -64,8 +64,8 @@ Summary:	DAVfs - SMP Drivers
 Summary(pl):	DAVfs - Sterowniki SMP
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
-Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_smp}
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-fs-davfs
 WebDAV is an acronym for Web-based Distributed Authoring and Version-
