@@ -12,6 +12,7 @@ Release:	%{_rel}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://dl.sourceforge.net/dav/%{name}-%{version}.tar.gz
+# Source0-md5:	705a99583a118ef3325551d700e49caa
 Patch0:		%{name}-path.patch
 Patch1:		%{name}-is_socket_ready.patch
 URL:		http://dav.sourceforge.net/
