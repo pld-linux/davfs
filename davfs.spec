@@ -5,7 +5,7 @@
 %define		_rel	1
 
 Summary:	Web-based Distributed Authoring and Versioning
-Summary(pl):	Bazuj±cy na WWW Rozproszone Autoryzowanie i Wersjonowanie
+Summary(pl):	Bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie
 Name:		davfs
 Version:	0.2.4
 Release:	%{_rel}
@@ -31,7 +31,7 @@ you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
 %description -l pl
-WebDAV to bazuj±cy na WWW Rozproszone Autoryzowanie i Wersjonowanie.
+WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
 Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
 u¿ywasz DAVfs to mo¿esz montowaæ swój serwer www jako system plików i
@@ -45,7 +45,6 @@ Group:		Base/Kernel
 Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
 
-
 %description -n kernel-fs-davfs
 WebDAV is an acronym for Web-based Distributed Authoring and Version-
 ing. Usually http is a read only protocol, but if you install DAV on
@@ -54,7 +53,7 @@ you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
 %description -n kernel-fs-davfs -l pl
-WebDAV to bazuj±cy na WWW Rozproszone Autoryzowanie i Wersjonowanie.
+WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
 Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
 u¿ywasz DAVfs to mo¿esz montowaæ swój serwer www jako system plików i
@@ -76,7 +75,7 @@ you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
 %description -n kernel-smp-fs-davfs -l pl
-WebDAV to bazuj±cy na WWW Rozproszone Autoryzowanie i Wersjonowanie.
+WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
 Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
 u¿ywasz DAVfs to mo¿esz montowaæ swój serwer www jako system plików i
@@ -98,7 +97,7 @@ u¿ywaæ tak jak normalnego dysku.
 	CFLAGS="-O2 -D__KERNEL__ -DMODULE -D__SMP__ -DCONFIG_X86_LOCAL_APIC \
 	-I%{_kernelsrcdir}/include -Wall -Wstrict-prototypes -fomit-frame-pointer \
 	-fno-strict-aliasing -pipe -fno-strength-reduce"
-mv davfs/davfs.o davfs-smp.o
+mv -f davfs/davfs.o davfs-smp.o
 
 %{__make} -C davfs clean all \
 	CC=%{kgcc} \
@@ -118,9 +117,12 @@ echo "all install:" > davfs/Makefile
 
 install davfs/davfs.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/misc/davfs.o
 install davfs-smp.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/davfs.o
-ln -s %{_sbindir}/mount.davfs $RPM_BUILD_ROOT/sbin/mount.davfs
+ln -sf %{_sbindir}/mount.davfs $RPM_BUILD_ROOT/sbin/mount.davfs
 
 gzip -9nf ChangeLog
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post   -n kernel-fs-davfs
 /sbin/depmod -a
@@ -133,25 +135,6 @@ gzip -9nf ChangeLog
 
 %postun -n kernel-smp-fs-davfs
 /sbin/depmod -a
-
-%post
-/sbin/chkconfig --add davfsd
-if [ -f /var/lock/subsys/davfsd ]; then
-        /etc/rc.d/init.d/davfsd restart 1>&2
-else
-        echo "Run \"/etc/rc.d/init.d/davfsd start\" to start davfsd daemon."
-fi
-
-%preun
-if [ "$1" = "0" ]; then
-        if [ -f /var/lock/subsys/davfsd ]; then
-                /etc/rc.d/init.d/davfsd stop 1>&2
-        fi
-        /sbin/chkconfig --del davfsd
-fi
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
