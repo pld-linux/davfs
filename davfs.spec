@@ -25,14 +25,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 WebDAV is an acronym for Web-based Distributed Authoring and Version-
-ing. Usually http is a read only protocol, but if you install DAV on
+ing. Usually HTTP is a read only protocol, but if you install DAV on
 your web server, it becomes writable. Furthermore, if you use DAVfs,
 you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
 %description -l pl
 WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
-Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
+Zazwyczaj protokó³ HTTP jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
 u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
 u¿ywaæ tak jak normalnego dysku.
@@ -47,14 +47,14 @@ Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-fs-davfs
 WebDAV is an acronym for Web-based Distributed Authoring and Version-
-ing. Usually http is a read only protocol, but if you install DAV on
+ing. Usually HTTP is a read only protocol, but if you install DAV on
 your web server, it becomes writable. Furthermore, if you use DAVfs,
 you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
 %description -n kernel-fs-davfs -l pl
 WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
-Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
+Zazwyczaj protokó³ HTTP jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
 u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
 u¿ywaæ tak jak normalnego dysku.
@@ -69,14 +69,14 @@ Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-fs-davfs
 WebDAV is an acronym for Web-based Distributed Authoring and Version-
-ing. Usually http is a read only protocol, but if you install DAV on
+ing. Usually HTTP is a read only protocol, but if you install DAV on
 your web server, it becomes writable. Furthermore, if you use DAVfs,
 you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
 %description -n kernel-smp-fs-davfs -l pl
 WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
-Zazwyczaj protokó³ http jest protoko³em tylko do odczytu ale po
+Zazwyczaj protokó³ HTTP jest protoko³em tylko do odczytu ale po
 zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
 u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
 u¿ywaæ tak jak normalnego dysku.
