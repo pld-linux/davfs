@@ -142,8 +142,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kernel-fs-davfs
 %defattr(644,root,root,755)
-%attr(600,root,root) /lib/modules/%{_kernel_ver}/misc/*.o*
+/lib/modules/%{_kernel_ver}/misc/*.o*
 
 %files -n kernel-smp-fs-davfs
 %defattr(644,root,root,755)
-%attr(600,root,root) /lib/modules/%{_kernel_ver}smp/misc/*.o*
+/lib/modules/%{_kernel_ver}smp/misc/*.o*
