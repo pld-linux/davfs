@@ -14,6 +14,7 @@ Group:		Base/Kernel
 Source0:	http://prdownloads.sourceforge.net/dav/%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Patch0:		%{name}-path.patch
+Patch1:		%{name}-is_socket_ready.patch
 URL:		http://dav.sourceforge.net/
 %{!?_without_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	autoconf
@@ -85,6 +86,7 @@ u¿ywaæ tak jak normalnego dysku.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure2_13 \
