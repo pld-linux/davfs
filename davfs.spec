@@ -23,8 +23,6 @@ BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	rpmbuild(macros) >= 1.118
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_sysconfdir	/etc
-
 %description
 WebDAV is an acronym for Web-based Distributed Authoring and Version-
 ing. Usually http is a read only protocol, but if you install DAV on
