@@ -107,7 +107,7 @@ mv -f davfs/davfs.o davfs-smp.o
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/sbin,%{_sysconfdir}/rc.d/init.d}
+install -d $RPM_BUILD_ROOT{/sbin,/etc/rc.d/init.d}
 install -d $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}{,smp}/misc
 
 echo "all install:" > davfs/Makefile
