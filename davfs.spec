@@ -12,7 +12,6 @@ Release:	%{_rel}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://prdownloads.sourceforge.net/dav/%{name}-%{version}.tar.gz
-Source1:	%{name}.init
 Patch0:		%{name}-path.patch
 Patch1:		%{name}-is_socket_ready.patch
 URL:		http://dav.sourceforge.net/
@@ -121,8 +120,6 @@ install davfs/davfs.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/misc/davfs.o
 install davfs-smp.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/davfs.o
 ln -s %{_sbindir}/mount.davfs $RPM_BUILD_ROOT/sbin/mount.davfs
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/davfsd
-
 gzip -9nf ChangeLog
 
 %post   -n kernel-fs-davfs
@@ -161,7 +158,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz doc/*.html
 %attr(755,root,root) /sbin/*
 %attr(755,root,root) %{_sbindir}/*
-%attr(754,root,root) /etc/rc.d/init.d/davfsd
 
 %files -n kernel-fs-davfs
 %defattr(644,root,root,755)
