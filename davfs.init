@@ -1,0 +1,78 @@
+# $Revision$, $Date$
+#!/bin/sh
+#
+# davfsd		davfsd (WEB-DAV Linux File System)
+#
+# chkconfig:	345 35 65
+#
+# description:	davfsd is a server part of the WEB-DAV Linux File System
+#
+
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+# Get network config
+. /etc/sysconfig/network
+
+# Get service config
+[ -f /etc/sysconfig/davfsd ] && . /etc/sysconfig/davfsd
+
+# Check that networking is up.
+if is_no "${NETWORKING}"; then
+        msg_network_down davfsd
+        exit 1
+fi
+
+
+# See how we were called.
+case "$1" in
+  start)
+	# Check if the service is already running?
+	if [ ! -f /var/lock/subsys/davfsd ]; then
+		msg_starting davfsd
+		daemon /usr/sbin/davfsd
+		RETVAL=$?
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/davfsd
+	else
+		msg_already_running davfsd
+	fi
+	;;
+  stop)
+        if [ -f /var/lock/subsys/davfsd ]; then
+		msg_stopping davfsd
+		killproc davfsd
+		rm -f /var/run/davfsd.pid /var/lock/subsys/davfsd >/dev/null 2>&1
+	else
+		msg_not_running davfsd
+		exit 1
+	fi
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  status)
+	status davfsd
+	exit $?
+	;;
+  reload)
+	msg_reloading davfsd
+	killproc davfsd -HUP
+	;;
+  *)
+	msg_usage "$0 {start|stop|init|status|restart|reload}"
+	exit 1
+esac
+
+exit $RETVAL
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%define date	%(echo `LC_ALL="C" date +"%a %b %d %Y"`)
+%changelog
+* %{date} PLD Team <feedback@pld.org.pl>
+All persons listed below can be reached at <cvs_login>@pld.org.pl
+
+$Log$
