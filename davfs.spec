@@ -5,7 +5,7 @@
 %define		_rel	1
 
 Summary:	Web-based Distributed Authoring and Versioning
-Summary(pl.UTF-8):   Bazujące na WWW Rozproszone Autoryzowanie i Wersjonowanie
+Summary(pl.UTF-8):	Bazujące na WWW Rozproszone Autoryzowanie i Wersjonowanie
 Name:		davfs
 Version:	0.2.4
 Release:	%{_rel}
@@ -39,7 +39,7 @@ używać tak jak normalnego dysku.
 
 %package -n kernel-fs-davfs
 Summary:	DAVfs - Drivers
-Summary(pl.UTF-8):   DAVfs - Sterowniki
+Summary(pl.UTF-8):	DAVfs - Sterowniki
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
@@ -61,7 +61,7 @@ używać tak jak normalnego dysku.
 
 %package -n kernel-smp-fs-davfs
 Summary:	DAVfs - SMP Drivers
-Summary(pl.UTF-8):   DAVfs - Sterowniki SMP
+Summary(pl.UTF-8):	DAVfs - Sterowniki SMP
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
