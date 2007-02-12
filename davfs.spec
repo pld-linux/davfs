@@ -5,7 +5,7 @@
 %define		_rel	1
 
 Summary:	Web-based Distributed Authoring and Versioning
-Summary(pl):	Bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie
+Summary(pl.UTF-8):   BazujÄ…ce na WWW Rozproszone Autoryzowanie i Wersjonowanie
 Name:		davfs
 Version:	0.2.4
 Release:	%{_rel}
@@ -30,16 +30,16 @@ your web server, it becomes writable. Furthermore, if you use DAVfs,
 you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
-%description -l pl
-WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
-Zazwyczaj protokó³ HTTP jest protoko³em tylko do odczytu ale po
-zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
-u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
-u¿ywaæ tak jak normalnego dysku.
+%description -l pl.UTF-8
+WebDAV to bazujÄ…ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
+Zazwyczaj protokÃ³Å‚ HTTP jest protokoÅ‚em tylko do odczytu ale po
+zainstalowaniu DAVa staje siÄ™ on rÃ³wnieÅ¼ zapisywalnym. Co wiÄ™cej jeÅ›li
+uÅ¼ywasz DAVfs to moÅ¼esz montowaÄ‡ swÃ³j serwer WWW jako system plikÃ³w i
+uÅ¼ywaÄ‡ tak jak normalnego dysku.
 
 %package -n kernel-fs-davfs
 Summary:	DAVfs - Drivers
-Summary(pl):	DAVfs - Sterowniki
+Summary(pl.UTF-8):   DAVfs - Sterowniki
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
@@ -52,16 +52,16 @@ your web server, it becomes writable. Furthermore, if you use DAVfs,
 you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
-%description -n kernel-fs-davfs -l pl
-WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
-Zazwyczaj protokó³ HTTP jest protoko³em tylko do odczytu ale po
-zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
-u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
-u¿ywaæ tak jak normalnego dysku.
+%description -n kernel-fs-davfs -l pl.UTF-8
+WebDAV to bazujÄ…ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
+Zazwyczaj protokÃ³Å‚ HTTP jest protokoÅ‚em tylko do odczytu ale po
+zainstalowaniu DAVa staje siÄ™ on rÃ³wnieÅ¼ zapisywalnym. Co wiÄ™cej jeÅ›li
+uÅ¼ywasz DAVfs to moÅ¼esz montowaÄ‡ swÃ³j serwer WWW jako system plikÃ³w i
+uÅ¼ywaÄ‡ tak jak normalnego dysku.
 
 %package -n kernel-smp-fs-davfs
 Summary:	DAVfs - SMP Drivers
-Summary(pl):	DAVfs - Sterowniki SMP
+Summary(pl.UTF-8):   DAVfs - Sterowniki SMP
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
@@ -74,12 +74,12 @@ your web server, it becomes writable. Furthermore, if you use DAVfs,
 you can mount your web server onto your filesystem and can use it as a
 normal disk.
 
-%description -n kernel-smp-fs-davfs -l pl
-WebDAV to bazuj±ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
-Zazwyczaj protokó³ HTTP jest protoko³em tylko do odczytu ale po
-zainstalowaniu DAVa staje siê on równie¿ zapisywalnym. Co wiêcej je¶li
-u¿ywasz DAVfs to mo¿esz montowaæ swój serwer WWW jako system plików i
-u¿ywaæ tak jak normalnego dysku.
+%description -n kernel-smp-fs-davfs -l pl.UTF-8
+WebDAV to bazujÄ…ce na WWW Rozproszone Autoryzowanie i Wersjonowanie.
+Zazwyczaj protokÃ³Å‚ HTTP jest protokoÅ‚em tylko do odczytu ale po
+zainstalowaniu DAVa staje siÄ™ on rÃ³wnieÅ¼ zapisywalnym. Co wiÄ™cej jeÅ›li
+uÅ¼ywasz DAVfs to moÅ¼esz montowaÄ‡ swÃ³j serwer WWW jako system plikÃ³w i
+uÅ¼ywaÄ‡ tak jak normalnego dysku.
 
 %prep
 %setup -q
